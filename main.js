@@ -82,6 +82,9 @@ function Request (options) {
   stream.Stream.call(this)
   this.readable = true
   this.writable = true
+  
+  // FIX base on http://stackoverflow.com/questions/8313628/node-js-request-how-to-emitter-setmaxlisteners
+  this.setMaxListeners(0);
 
   if (typeof options === 'string') {
     options = {uri:options}
