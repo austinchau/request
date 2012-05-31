@@ -808,6 +808,7 @@ function request (uri, options, callback) {
 }
 
 module.exports = request
+module.exports.Request = Request
 
 request.defaults = function (options) {
   var def = function (method) {
